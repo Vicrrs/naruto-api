@@ -6,15 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    // migration do clan
+    public function up()
     {
-        Schema::create('clans', function (Blueprint $table) {
+        Schema::create('clans', function (Blueprint $table){
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('symbol_url')->nullable();
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
