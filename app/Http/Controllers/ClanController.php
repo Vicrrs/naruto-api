@@ -32,4 +32,26 @@ class ClanController extends Controller
         return response() -> json($clan);
     }
 
+    // Método update para atualizar um cla existente
+
+    public function update(Request $request, Clan $clan)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'symbol_url' => 'nullable|string'
+        ]);
+    
+        $clan->update($request->all());
+        return response()->json($clan);
+    }
+
+    // excluir um clã específico com base em seu ID
+    public function destroy(Clan $clan)
+    {
+        $clan->delete();
+        return response()->json(null, 204);
+    }
+
+
 }
