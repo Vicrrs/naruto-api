@@ -13,4 +13,5 @@ class Clan extends Model
     {
         return $this->hasMany(Character::class);    
     }
+    protected $fillable = ['name', 'description', 'symbol'];
 }

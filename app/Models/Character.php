@@ -18,5 +18,6 @@ class Character extends Model
     {
         return $this->belongsTo(Clan::class);    
     }
+    protected $fillable = ['name', 'description', 'village', 'clan_id'];  // Adicionamos o 'clan_id' porque será a chave estrangeira.
 
 }

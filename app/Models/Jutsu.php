@@ -12,4 +12,5 @@ class Jutsu extends Model
     {
         return $this->belongsToMany(Character::class);
     }
+    protected $fillable = ['name', 'type', 'description'];
 }
