@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Jutsu extends Model
 {
     use HasFactory;
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class);
+    }
 }
